@@ -10,9 +10,13 @@ namespace Engine {
     class LayerSystem
     {
     public:
-        void AppendLayer();
+        template<typename T>
+        void AppendLayer() {
+            m_layers.emplace_back(new T());
+            m_layers.back()->OnAdded();
+        }
     private:
-        std::vector<std::unique_ptr<Layer>> m_layers;
+        std::vector<Layer*> m_layers;
     };
 }
 #endif

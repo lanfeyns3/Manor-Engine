@@ -5,7 +5,9 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <stdint.h>
+
 #include "Log.h"
+#include "LayerSystem.h"
 
 namespace Engine {
 
@@ -22,6 +24,8 @@ namespace Engine {
         void CreateApp(AppSpecifications appSpecs);
 
         void Run();
+    protected:
+        LayerSystem m_layers;
     private:
         bool m_running = true;
         GLFWwindow* m_window;

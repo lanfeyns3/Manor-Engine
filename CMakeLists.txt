@@ -1,7 +1,6 @@
 cmake_minimum_required(VERSION "3.19.2")
 
 add_subdirectory("vendor/GLFW/")
-add_subdirectory("vendor/spdlog/")
 
 project(GameEngine)
 
@@ -12,7 +11,7 @@ add_library(Engine STATIC ${ENGINEFILES} vendor/glad/src/glad.c)
 target_include_directories(Engine PUBLIC vendor/GLFW/include/ vendor/glad/include/ vendor/spdlog/include/)
 
 find_package(OpenGL REQUIRED)
-target_link_libraries(Engine PRIVATE glfw spdlog OpenGL::GL)
+target_link_libraries(Engine PRIVATE glfw OpenGL::GL)
 
 add_executable(Editor ${EDITORFILES})
 target_link_libraries(Editor PRIVATE Engine )

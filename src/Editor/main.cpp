@@ -1,4 +1,7 @@
 #include "Core/Application.h"
+#include "Layers/EditorLayer.h"
+
+#include "Core/LayerSystem.h"
 
 class Editor : public Engine::Application 
 {
@@ -12,6 +15,8 @@ public:
         appSpecs.name = (char*)"Editor";
 
         CreateApp(appSpecs);
+
+        m_layers.AppendLayer<EditorLayer>();
     }
 
 };
