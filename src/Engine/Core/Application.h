@@ -8,6 +8,7 @@
 
 #include "Log.h"
 #include "LayerSystem.h"
+#include "EventSystem.h"
 
 namespace Engine {
 
@@ -26,6 +27,7 @@ namespace Engine {
         void Run();
     protected:
         LayerSystem m_layers;
+        EventSystem m_events;
     private:
         bool m_running = true;
         GLFWwindow* m_window;

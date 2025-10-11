@@ -14,5 +14,10 @@ find_package(OpenGL REQUIRED)
 target_link_libraries(Engine PRIVATE glfw OpenGL::GL)
 
 add_executable(Editor ${EDITORFILES})
-target_link_libraries(Editor PRIVATE Engine )
+target_link_libraries(Editor PRIVATE Engine)
 target_include_directories(Editor PRIVATE src/Engine)
+
+if (MSVC)
+    target_compile_options(Engine PUBLIC /utf-8)
+    target_compile_options(Editor PUBLIC /utf-8)
+endif()

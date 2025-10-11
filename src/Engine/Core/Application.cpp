@@ -24,6 +24,7 @@ namespace Engine
         while (m_running)
         {
             glfwPollEvents();
+            m_events.Ping();
 
             if (glfwWindowShouldClose(m_window))
                 break;

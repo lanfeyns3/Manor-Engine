@@ -11,6 +11,6 @@ public:
     };
 
     void OnEvent() {
-
+        CONSOLE_LOG_DEBUG("This is an Event");
     };
 };

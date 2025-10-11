@@ -11,9 +11,10 @@ namespace Engine {
     {
     public:
         template<typename T>
-        void AppendLayer() {
+        Layer*& AppendLayer() {
             m_layers.emplace_back(new T());
             m_layers.back()->OnAdded();
+            return m_layers.back();
         }
     private:
         std::vector<Layer*> m_layers;
