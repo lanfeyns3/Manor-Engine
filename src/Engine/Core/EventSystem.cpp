@@ -16,9 +16,10 @@ namespace Engine
     {
         for (auto& event : m_events)
         {
-            for (auto& layer : m_layers[event->GetID()])
+            int id = event->GetID();
+            for (auto& layer : m_layers[id])
             {
-                layer->OnEvent();
+                layer->OnEvent(id,event);
             }
         }
         m_events.clear();
