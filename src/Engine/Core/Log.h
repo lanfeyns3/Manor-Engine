@@ -22,7 +22,7 @@ namespace Engine
 #define CONSOLE_LOG_INFO(msg) spdlog::get("CONSOLE")->info(msg)
 #define CONSOLE_LOG_WARN(msg) spdlog::get("CONSOLE")->warn(msg)
 #define CONSOLE_LOG_ERROR(msg) spdlog::get("CONSOLE")->error(msg)
-#define CONSOLE_LOG_CRITICAL(msg) spdlog::get("CONSOLE")->critical(msg)
+#define CONSOLE_LOG_CRITICAL(...) spdlog::get("CONSOLE")->critical(__VA_ARGS__)
 
 
 #endif
