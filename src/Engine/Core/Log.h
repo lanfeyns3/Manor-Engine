@@ -10,18 +10,18 @@ namespace Engine
     void InitLogging();
 } // namespace Engine
 
-#define ENGINE_LOG_TRACE(msg) spdlog::get("ENGINE")->trace(msg)
-#define ENGINE_LOG_DEBUG(msg) spdlog::get("ENGINE")->debug(msg)
-#define ENGINE_LOG_INFO(msg) spdlog::get("ENGINE")->info(msg)
-#define ENGINE_LOG_WARN(msg) spdlog::get("ENGINE")->warn(msg)
-#define ENGINE_LOG_ERROR(msg) spdlog::get("ENGINE")->error(msg)
-#define ENGINE_LOG_CRITICAL(msg) spdlog::get("ENGINE")->critical(msg)
+#define ENGINE_LOG_TRACE(...) spdlog::get("ENGINE")->trace(__VA_ARGS__)
+#define ENGINE_LOG_DEBUG(...) spdlog::get("ENGINE")->debug(__VA_ARGS__)
+#define ENGINE_LOG_INFO(...) spdlog::get("ENGINE")->info(__VA_ARGS__)
+#define ENGINE_LOG_WARN(...) spdlog::get("ENGINE")->warn(__VA_ARGS__)
+#define ENGINE_LOG_ERROR(...) spdlog::get("ENGINE")->error(__VA_ARGS__)
+#define ENGINE_LOG_CRITICAL(...) spdlog::get("ENGINE")->critical(__VA_ARGS__)
 
-#define CONSOLE_LOG_TRACE(msg) spdlog::get("CONSOLE")->trace(msg)
-#define CONSOLE_LOG_DEBUG(msg) spdlog::get("CONSOLE")->debug(msg)
-#define CONSOLE_LOG_INFO(msg) spdlog::get("CONSOLE")->info(msg)
-#define CONSOLE_LOG_WARN(msg) spdlog::get("CONSOLE")->warn(msg)
-#define CONSOLE_LOG_ERROR(msg) spdlog::get("CONSOLE")->error(msg)
+#define CONSOLE_LOG_TRACE(...) spdlog::get("CONSOLE")->trace(__VA_ARGS__)
+#define CONSOLE_LOG_DEBUG(...) spdlog::get("CONSOLE")->debug(__VA_ARGS__)
+#define CONSOLE_LOG_INFO(...) spdlog::get("CONSOLE")->info(__VA_ARGS__)
+#define CONSOLE_LOG_WARN(...) spdlog::get("CONSOLE")->warn(__VA_ARGS__)
+#define CONSOLE_LOG_ERROR(...) spdlog::get("CONSOLE")->error(__VA_ARGS__)
 #define CONSOLE_LOG_CRITICAL(...) spdlog::get("CONSOLE")->critical(__VA_ARGS__)
 
 
