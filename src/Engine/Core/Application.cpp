@@ -30,6 +30,10 @@ namespace Engine
                 break;
 
             glfwSwapBuffers(m_window);
+
+            
+            using namespace::std::chrono_literals;
+            std::this_thread::sleep_for(5ms);
         }
         
     }

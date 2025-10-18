@@ -7,7 +7,7 @@ add_subdirectory("vendor/GLFW/")
 project(GameEngine)
 
 file(GLOB EDITORFILES src/Editor/**.cpp)
-file(GLOB ENGINEFILES src/Engine/Core/**.cpp)
+file(GLOB ENGINEFILES src/Engine/Core/**.cpp src/Engine/Utils/**.cpp)
 
 add_library(Engine STATIC ${ENGINEFILES} vendor/glad/src/glad.c)
 target_include_directories(Engine PUBLIC vendor/GLFW/include/ vendor/glad/include/ vendor/spdlog/include/)
