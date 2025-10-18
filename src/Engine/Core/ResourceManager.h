@@ -14,8 +14,25 @@ namespace Engine
     class ResourceManager
     {
     public:
-        std::expected<Resource*,bool> LoadAsset(const char* name, const char* path);
-        std::expected<Resource*,bool> GetAsset(const char* name);
+        template<typename T>
+        std::expected<Resource*,bool> LoadResource(const char* name, const char* path)
+        {
+            if (!m_resources.contains(name))
+            {
+                FileStream stream(path);
+                auto data = stream.Read();
+                if (data)
+                {
+                    auto raw = *data;
+                    m_resources[name] = new T();
+                    m_resources[name]->data = new char[raw.size() + 1];
+                    std::memcpy(m_resources[name]->data,raw.c_str(),raw.size() + 1);
+                    return m_resources[name];
+                }
+            };
+            return std::unexpected(false);
+        };
+        std::expected<Resource*,bool> GetResource(const char* name);
     private:
         std::unordered_map<const char*,Resource*> m_resources;
     };
