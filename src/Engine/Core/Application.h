@@ -5,10 +5,12 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <stdint.h>
+#include <chrono>
 
 #include "Log.h"
 #include "LayerSystem.h"
 #include "EventSystem.h"
+#include "ResourceManager.h"
 
 namespace Engine {
 
@@ -28,6 +30,7 @@ namespace Engine {
     protected:
         LayerSystem m_layers;
         EventSystem m_events;
+        ResourceManager m_resources;
     private:
         bool m_running = true;
         GLFWwindow* m_window;
